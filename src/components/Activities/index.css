@@ -1,0 +1,9 @@
+.activity {
+  padding: 1.5rem 0;
+}
+.activity__short-description {
+  margin: 0;
+}
+.activity__link-text {
+  font-size: var(--font-size-huge);
+}

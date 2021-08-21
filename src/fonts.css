@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+
+:root {
+  --font-primary: "Source Code Pro", monospace;
+  --font-weight-primary: normal;
+
+  --font-size-primary: 18px;
+  --font-size-huge: 24px;
+}
