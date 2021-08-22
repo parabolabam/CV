@@ -1,12 +1,15 @@
 import { ProjectCard } from "../ProjectCard";
 import { Expandable } from "../Expandable";
 import { projects } from "./lineateProjects";
+import "./index.css";
 
 export function LineateProjects() {
-  console.log(projects);
   return (
-    <Expandable>
-      <div>
+    <Expandable
+      altForExpandButton="More about projects"
+      altForCollapseButton="Collapse"
+    >
+      <div className="lineate-projects">
         {projects.map((project) => {
           return <ProjectCard key={project.id} {...project} />;
         })}

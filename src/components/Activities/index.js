@@ -1,13 +1,24 @@
 import { Link } from "../Link";
 import { LineateProjects } from "../LineateProjects";
+import { Heading } from "../Heading";
+import {
+  lineateWebSiteLink,
+  githubLink,
+  twitterLInk,
+  instagramLink,
+  telegramLink,
+} from "../../utils/constants";
+
 import "./index.css";
 
 function ActivitySection({ link, linkText, shortDescription, children }) {
   return (
     <section className="activity">
-      <Link href={link}>
-        <span className="activity__link-text">{linkText}</span>
-      </Link>
+      <Heading level={2}>
+        <Link href={link}>
+          <span className="activity__link-text">{linkText}</span>
+        </Link>
+      </Heading>
       <p className="activity__short-description">{shortDescription}</p>
       {children}
     </section>
@@ -15,12 +26,6 @@ function ActivitySection({ link, linkText, shortDescription, children }) {
 }
 
 export function Activities() {
-  const lineateWebSiteLink = "https://lineate.ru/";
-  const githubLink = "https://github.com/parabolabam";
-  const twitterLInk = "https://twitter.com/parabolabam";
-  const instagramLink = "https://www.instagram.com/parabola_bam/";
-  const telegramLink = "https://t.me/VladislawSorokin";
-
   return (
     <>
       <ActivitySection

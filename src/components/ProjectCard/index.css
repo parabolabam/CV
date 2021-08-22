@@ -1,2 +1,14 @@
-.project-card {
+.project-card > *:not(:last-child) {
+  padding: 1rem 0;
+}
+
+.project-card__tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.project-card__project-name {
+  font-size: var(--font-size-huge);
 }

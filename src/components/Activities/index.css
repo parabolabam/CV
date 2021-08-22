@@ -2,7 +2,8 @@
   padding: 1.5rem 0;
 }
 .activity__short-description {
-  margin: 0;
+  /* since there is no reset css yet */
+  margin: 1rem 0 0;
 }
 .activity__link-text {
   font-size: var(--font-size-huge);
