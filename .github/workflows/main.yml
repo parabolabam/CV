@@ -24,14 +24,18 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: Test
+        run: npm run test
+        
+      - name: size-limit-action
+        uses: andresz1/size-limit-action@v1
 
-      # Runs a single command using the runners shell
       - name: Decrypt Deployment Key
         env:
           SSH_PRIVATE_KEY_IN_BASE64: ${{ secrets.SSH_PRIVATE_KEY_IN_BASE64 }}
         run: |
           echo "$SSH_PRIVATE_KEY_IN_BASE64" | base64 --decode  >deployment.key
           chmod 400 deployment.key
-      - name: install docker & docker-compose
-        run: |
-         curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      
+        
