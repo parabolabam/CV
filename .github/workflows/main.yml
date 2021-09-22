@@ -31,4 +31,7 @@ jobs:
           SSH_PRIVATE_KEY_IN_BASE64: ${{ secrets.SSH_PRIVATE_KEY_IN_BASE64 }}
         run: |
           echo "$SSH_PRIVATE_KEY_IN_BASE64" | base64 --decode  >deployment.key
-          chmod 400 deployment.key && ls
+          chmod 400 deployment.key
+      - name: install docker & docker-compose
+        run: |
+         curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
