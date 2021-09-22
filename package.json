@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "razzle start",
+    "size-limit": "size-limit",
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/custom.js"
@@ -15,6 +16,7 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
+    "size-limit": "^4.10.2",
     "babel-preset-razzle": "4.0.6",
     "html-webpack-plugin": "^4.5.2",
     "mini-css-extract-plugin": "^0.9.0",
