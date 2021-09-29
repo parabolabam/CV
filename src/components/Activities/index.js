@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "../Link";
 import { LineateProjects } from "../LineateProjects";
 import { Heading } from "../Heading";
