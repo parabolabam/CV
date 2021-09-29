@@ -1,4 +1,5 @@
 import { Avatar } from "../Avatar";
+import React from "react";
 import { workplace } from "../../utils/constants";
 import { Link } from "../Link";
 import "./index.css";

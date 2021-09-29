@@ -1,6 +1,8 @@
 import { ProjectCard } from "../ProjectCard";
 import { Expandable } from "../Expandable";
 import { projects } from "./lineateProjects";
+import React from "react";
+
 import "./index.css";
 
 export function LineateProjects() {
