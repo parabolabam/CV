@@ -16,7 +16,7 @@ const isDev = process.env.NODE_ENV !== 'production';
 module.exports = {
   mode: isDev ? 'development' : 'production',
 
-  entry: path.resolve(__dirname, 'src', 'client.js'),
+  entry: path.resolve(__dirname, 'src', 'client.jsx'),
 
   output: {
     chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash].chunk.js',
