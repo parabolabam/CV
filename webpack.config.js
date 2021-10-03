@@ -1,34 +1,34 @@
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const CompressionPlugin = require("compression-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const path = require("path");
-const TerserPlugin = require("terser-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 const {
   EnvironmentPlugin,
   HotModuleReplacementPlugin,
   HashedModuleIdsPlugin,
-} = require("webpack");
-const CopyPlugin = require("copy-webpack-plugin");
+} = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
-const isDev = process.env.NODE_ENV !== "production";
+const isDev = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  mode: isDev ? "development" : "production",
+  mode: isDev ? 'development' : 'production',
 
-  entry: path.resolve(__dirname, "src", "client.js"),
+  entry: path.resolve(__dirname, 'src', 'client.js'),
 
   output: {
-    chunkFilename: isDev ? "[name].chunk.js" : "[name].[chunkhash].chunk.js",
-    filename: isDev ? "[name].js" : "[name].[chunkhash].js",
-    path: path.resolve(__dirname, "docs"),
-    publicPath: "/CV",
+    chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash].chunk.js',
+    filename: isDev ? '[name].js' : '[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'docs'),
+    publicPath: '/CV',
   },
 
-  target: "web",
+  target: 'web',
 
   resolve: {
-    extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },
 
   module: {
@@ -42,125 +42,125 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: "babel-loader",
+        use: 'babel-loader',
       },
       {
         test: /\.html$/,
-        use: "html-loader",
+        use: 'html-loader',
       },
       {
         test: /\.css$/,
         use: [
-          isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
         ],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        use: "file-loader",
+        use: 'file-loader',
       },
     ],
   },
 
   optimization: isDev
     ? {
-        splitChunks: {
-          chunks: "all",
-        },
-      }
+      splitChunks: {
+        chunks: 'all',
+      },
+    }
     : {
-        minimize: true,
-        minimizer: [
-          new TerserPlugin({
-            parallel: true,
-            sourceMap: true,
-            terserOptions: {
-              compress: {
-                comparisons: false,
-              },
-              mangle: true,
-              output: {
-                ascii_only: true,
-                comments: false,
-              },
-              parse: {},
-              warnings: false,
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          parallel: true,
+          sourceMap: true,
+          terserOptions: {
+            compress: {
+              comparisons: false,
             },
-          }),
-        ],
-        nodeEnv: "production",
-        sideEffects: true,
-        splitChunks: {
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: function (module) {
-                const packageName = module.context.match(
-                  /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-                )[1];
-                return `npm.${packageName.replace("@", "")}`;
-              },
+            mangle: true,
+            output: {
+              ascii_only: true,
+              comments: false,
+            },
+            parse: {},
+            warnings: false,
+          },
+        }),
+      ],
+      nodeEnv: 'production',
+      sideEffects: true,
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name(module) {
+              const packageName = module.context.match(
+                /[\\/]node_modules[\\/](.*?)([\\/]|$)/,
+              )[1];
+              return `npm.${packageName.replace('@', '')}`;
             },
           },
-          chunks: "all",
-          maxInitialRequests: 10,
-          minSize: 0,
         },
+        chunks: 'all',
+        maxInitialRequests: 10,
+        minSize: 0,
       },
+    },
 
   plugins: [
     new CleanWebpackPlugin(),
     new EnvironmentPlugin({
-      NODE_ENV: "development",
+      NODE_ENV: 'development',
     }),
     ...(isDev ? [new HotModuleReplacementPlugin()] : []),
     new MiniCssExtractPlugin({
-      filename: isDev ? "[name].css" : "[name].[hash].css",
+      filename: isDev ? '[name].css' : '[name].[hash].css',
     }),
     new HtmlWebpackPlugin({
       inject: true,
       minify: !isDev,
-      template: path.resolve(__dirname, "src", "index.html"),
+      template: path.resolve(__dirname, 'src', 'index.html'),
     }),
     ...(isDev
       ? []
       : [
-          new CompressionPlugin({
-            algorithm: "gzip",
-            minRatio: 0.8,
-            threshold: 10240,
-            test: /\.js$|\.css$|\.html$/,
-          }),
-          new HashedModuleIdsPlugin({
-            hashDigest: "hex",
-            hashDigestLength: 20,
-            hashFunction: "sha256",
-          }),
-        ]),
+        new CompressionPlugin({
+          algorithm: 'gzip',
+          minRatio: 0.8,
+          threshold: 10240,
+          test: /\.js$|\.css$|\.html$/,
+        }),
+        new HashedModuleIdsPlugin({
+          hashDigest: 'hex',
+          hashDigestLength: 20,
+          hashFunction: 'sha256',
+        }),
+      ]),
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "public", "favicon.ico"),
-          to: path.resolve(__dirname, "docs/assets"),
+          from: path.resolve(__dirname, 'public', 'favicon.ico'),
+          to: path.resolve(__dirname, 'docs/assets'),
         },
         {
-          from: path.resolve(__dirname, "public", "site.webmanifest"),
-          to: path.resolve(__dirname, "docs/assets"),
+          from: path.resolve(__dirname, 'public', 'site.webmanifest'),
+          to: path.resolve(__dirname, 'docs/assets'),
         },
       ],
     }),
   ],
 
   devServer: {
-    clientLogLevel: "warning",
+    clientLogLevel: 'warning',
     historyApiFallback: {
       disableDotRule: true,
     },
     hot: true,
     inline: true,
-    stats: "minimal",
+    stats: 'minimal',
   },
 
-  devtool: isDev ? "cheap-module-eval-source-map" : "hidden-source-map",
+  devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
 };

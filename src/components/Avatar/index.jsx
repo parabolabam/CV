@@ -1,9 +1,9 @@
-import React from "react";
-import { Image } from "../Image";
-import { Link } from "../Link";
-import { githubLink } from "../../utils/constants";
+import React from 'react';
+import { Image } from '../Image';
+import { Link } from '../Link';
+import { githubLink } from '../../utils/constants';
 
-import "./index.css";
+import './index.css';
 
 export function Avatar() {
   return (

@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 export function Heading({ level, children }) {
   switch (level) {
@@ -18,4 +18,5 @@ export function Heading({ level, children }) {
 
 Heading.propTypes = {
   level: PropTypes.number.isRequired,
+  children: PropTypes.element,
 };

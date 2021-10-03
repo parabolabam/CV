@@ -1,18 +1,21 @@
-import React from "react";
-import { Link } from "../Link";
-import { LineateProjects } from "../LineateProjects";
-import { Heading } from "../Heading";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from '../Link';
+import { LineateProjects } from '../LineateProjects';
+import { Heading } from '../Heading';
 import {
   lineateWebSiteLink,
   githubLink,
   twitterLInk,
   instagramLink,
   telegramLink,
-} from "../../utils/constants";
+} from '../../utils/constants';
 
-import "./index.css";
+import './index.css';
 
-function ActivitySection({ link, linkText, shortDescription, children }) {
+function ActivitySection({
+  link, linkText, shortDescription, children = null,
+}) {
   return (
     <section className="activity">
       <Heading level={2}>
@@ -61,3 +64,10 @@ export function Activities() {
     </>
   );
 }
+
+ActivitySection.propTypes = {
+  link: PropTypes.string.isRequired,
+  linkText: PropTypes.string.isRequired,
+  shortDescription: PropTypes.string.isRequired,
+  children: PropTypes.element,
+};
