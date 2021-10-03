@@ -29,4 +29,5 @@ body {
 .layout {
   display: grid;
   place-content: center;
+  padding: 5rem;
 }
