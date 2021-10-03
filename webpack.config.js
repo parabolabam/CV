@@ -120,7 +120,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       minify: !isDev,
-      template: path.resolve(__dirnamed, "src", "index.html"),
+      template: path.resolve(__dirname, "src", "index.html"),
     }),
     ...(isDev
       ? []
