@@ -20,7 +20,7 @@ module.exports = {
   output: {
     chunkFilename: isDev ? "[name].chunk.js" : "[name].[chunkhash].chunk.js",
     filename: isDev ? "[name].js" : "[name].[chunkhash].js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
     publicPath: "/",
   },
 
@@ -120,7 +120,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       minify: !isDev,
-      template: path.resolve(__dirname, "src", "index.html"),
+      template: path.resolve(__dirnamed, "src", "index.html"),
     }),
     ...(isDev
       ? []
