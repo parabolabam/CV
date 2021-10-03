@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///src/components/Theme/colors-light.css"],"names":[],"mappings":"AAAA,MAEE,4BAA6B,CAC7B,sBAAuB,CAEvB,6BACF,C","file":"8.aa4bbb3f3e2f80204275.css","sourcesContent":[":root {\n  /* colors */\n  --background-primary: #e5e9ee;\n  --text-primary: #181212;\n\n  --color-focus-primary: #5bb2fa;\n}\n"],"sourceRoot":""}
