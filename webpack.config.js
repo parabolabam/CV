@@ -9,6 +9,7 @@ const {
   HotModuleReplacementPlugin,
   HashedModuleIdsPlugin,
 } = require("webpack");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -137,6 +138,18 @@ module.exports = {
             hashFunction: "sha256",
           }),
         ]),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "public", "favicon.ico"),
+          to: path.resolve(__dirname, "docs/assets"),
+        },
+        {
+          from: path.resolve(__dirname, "public", "webmanifest"),
+          to: path.resolve(__dirname, "docs/assets"),
+        },
+      ],
+    }),
   ],
 
   devServer: {
