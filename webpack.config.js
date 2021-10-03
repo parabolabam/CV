@@ -145,7 +145,7 @@ module.exports = {
           to: path.resolve(__dirname, "docs/assets"),
         },
         {
-          from: path.resolve(__dirname, "public", "webmanifest"),
+          from: path.resolve(__dirname, "public", "site.webmanifest"),
           to: path.resolve(__dirname, "docs/assets"),
         },
       ],
