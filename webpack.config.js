@@ -22,7 +22,7 @@ module.exports = {
     chunkFilename: isDev ? '[name].chunk.js' : '[name].chunk.js',
     filename: isDev ? '[name].js' : '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'docs'),
-    publicPath: '/CV',
+    publicPath: '/CV/',
   },
 
   target: 'web',
