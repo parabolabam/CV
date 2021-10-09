@@ -6,5 +6,8 @@ export function Header({ children = null }) {
 }
 
 Header.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };

@@ -18,5 +18,8 @@ export function Heading({ level, children }) {
 
 Heading.propTypes = {
   level: PropTypes.number.isRequired,
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };

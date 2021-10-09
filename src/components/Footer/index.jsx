@@ -7,5 +7,8 @@ export function Footer({ children }) {
 }
 
 Footer.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };

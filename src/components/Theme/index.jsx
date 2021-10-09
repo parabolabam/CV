@@ -29,5 +29,8 @@ const ThemeSelector = ({ children }) => {
 export default ThemeSelector;
 
 ThemeSelector.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };

@@ -48,5 +48,8 @@ Expandable.propTypes = {
   isInitiallyCollapsed: PropsType.bool,
   altForExpandButton: PropsType.string,
   altForCollapseButton: PropsType.string,
-  children: PropsType.element,
+  children: PropsType.oneOfType([
+    PropsType.arrayOf(PropsType.node),
+    PropsType.node,
+  ]),
 };

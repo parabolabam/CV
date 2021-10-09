@@ -20,5 +20,8 @@ export function Link({ children = null, href = '#', targetBlank = true }) {
 Link.propTypes = {
   href: PropTypes.string,
   targetBlank: PropTypes.bool,
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };

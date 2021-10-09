@@ -69,5 +69,8 @@ ActivitySection.propTypes = {
   link: PropTypes.string.isRequired,
   linkText: PropTypes.string.isRequired,
   shortDescription: PropTypes.string.isRequired,
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };

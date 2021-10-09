@@ -25,9 +25,3 @@ body {
   width: 100%;
   overflow: auto;
 }
-
-.layout {
-  display: grid;
-  place-content: center;
-  padding: 5rem;
-}

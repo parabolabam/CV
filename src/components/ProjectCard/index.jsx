@@ -44,7 +44,7 @@ ProjectCard.propTypes = {
       id: PropTypes.number.isRequired,
       link: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      comment: PropTypes.string.isRequired,
+      comment: PropTypes.string,
     }),
-  ).isRequired,
+  ),
 };

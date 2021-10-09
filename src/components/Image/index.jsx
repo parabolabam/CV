@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 export function Image({
-  mobileSource,
+  mobileSource = '',
   regularSource,
   alt,
   width = 200,
@@ -17,7 +17,7 @@ export function Image({
 }
 
 Image.propTypes = {
-  mobileSource: PropTypes.string.isRequired,
+  mobileSource: PropTypes.string,
   regularSource: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   width: PropTypes.number,
