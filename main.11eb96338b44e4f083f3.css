@@ -8,6 +8,7 @@ body,html{height:100%;width:100%;margin:0;padding:0}body{background-color:var(--
 .project-card>:not(:last-child){padding:1rem 0}.project-card__tech-stack{display:flex;flex-wrap:wrap;gap:1rem;padding:.5rem}.project-card__project-name{font-size:var(--font-size-huge)}
 .expandable__label:focus-within{box-shadow:0 0 0 3px #5bb2fa;border-radius:5px;outline:none}.expandable__label{cursor:pointer}.expandable__expanded-content{max-height:20rem;overflow:auto;display:flex;width:0;min-width:100%;transition:height .25s ease-in-out}.expandable__expanded-content--collapsed{height:0;display:none}.expandable__icon{display:inline-block;transition:all .3s}.expandable__icon--rotated{transform:rotate(-180deg)}
 .lineate-projects{padding-left:1rem}
+.epam-projects{padding-left:1rem}
 .activity{padding:1.5rem 0}.activity__short-description{margin:1rem 0 0}.activity__link-text{font-size:var(--font-size-huge)}
 .footer{position:fixed;bottom:0}
 .layout{display:grid;place-content:center;padding:5rem}
