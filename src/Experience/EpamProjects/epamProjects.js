@@ -1,11 +1,11 @@
 export const projects = [
   {
-    id: 'lal9840fhnbio',
-    projectName: 'DataXu',
+    id: '1',
+    projectName: 'SuranceBay',
     projectDescription:
-      'dataxu is a software company that helps marketing professionals use data to improve their advertising',
-    startDate: '04/01/2019',
-    endDate: '09/30/2019',
+        'The USA iternal Application to provide an ability to serve insurance to insurance companies',
+    startDate: '01/09/2019',
+    endDate: 'Present Time',
     technologies: [
       {
         id: 1,

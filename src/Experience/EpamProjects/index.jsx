@@ -1,17 +1,17 @@
 import React from 'react';
-import { ProjectCard } from '../ProjectCard';
-import { Expandable } from '../Expandable';
-import { projects } from './lineateProjects';
+import { ProjectCard } from '../../components/ProjectCard';
+import { Expandable } from '../../components/Expandable';
+import { projects } from './epamProjects';
 
 import './index.css';
 
-export function LineateProjects() {
+export function EpamProjects() {
   return (
     <Expandable
       altForExpandButton="More about projects"
       altForCollapseButton="Collapse"
     >
-      <div className="lineate-projects">
+      <div className="epam-projects">
         {projects.map((project) => (
           <ProjectCard
             key={project.id}

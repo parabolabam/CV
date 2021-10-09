@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from '../Link';
-import { LineateProjects } from '../LineateProjects';
+import { LineateProjects } from '../../Experience/LineateProjects';
+import { EpamProjects } from '../../Experience/EpamProjects';
+
 import { Heading } from '../Heading';
 import {
   lineateWebSiteLink,
@@ -38,6 +40,14 @@ export function Activities() {
         shortDescription="Occupied software engineer position"
       >
         <LineateProjects />
+      </ActivitySection>
+
+      <ActivitySection
+        link={lineateWebSiteLink}
+        linkText="Epam Team Member"
+        shortDescription="Occupied software engineer position"
+      >
+        <EpamProjects />
       </ActivitySection>
 
       <ActivitySection
