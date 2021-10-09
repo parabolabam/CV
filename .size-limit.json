@@ -1,6 +1,6 @@
 [
     {
-        "limit": "1 s",
+        "limit": "95 KB"
         "path": "docs/*.js"
     }
 ]
