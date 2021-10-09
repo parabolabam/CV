@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 export function Image({
   mobileSource,
@@ -17,7 +17,9 @@ export function Image({
 }
 
 Image.propTypes = {
-  mobileSource: PropTypes.string,
+  mobileSource: PropTypes.string.isRequired,
   regularSource: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  width: PropTypes.number,
+  height: PropTypes.number,
 };

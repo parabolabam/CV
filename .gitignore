@@ -1,3 +1,9 @@
+logs
+*.log
+npm-debug.log*
+.DS_Store
+.vscode
+
 coverage
 node_modules
 build
@@ -7,3 +13,5 @@ public/static
 .env.test.local
 .env.production.local
 cache/*
+.eslintcache
+docs/
