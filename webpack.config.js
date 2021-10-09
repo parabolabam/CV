@@ -19,7 +19,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'src', 'client.jsx'),
 
   output: {
-    chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash].chunk.js',
+    chunkFilename: isDev ? '[name].chunk.js' : '[name].chunk.js',
     filename: isDev ? '[name].js' : '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'docs'),
     publicPath: '/CV',
