@@ -1,24 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import './index.css';
 
-export default function Toggle({ name }) {
+export function Toggle({ label }) {
   return (
-    <div className="toggle-switch">
-      <label htmlFor="toggleSwitch" className="toggle-switch-label">
-        <input
-          type="checkbox"
-          name={name}
-          id={name}
-          className="toggle-switch-checkbox"
-        />
-        <span className="toggle-switch-inner" />
-        <span className="toggle-switch-switch" />
 
-      </label>
-    </div>
+    <label className="Toggle" htmlFor="toggle">
+      <input type="checkbox" name="toggle" id="toggle" className="Toggle__input" />
+      <span className="Toggle__display" hidden />
+      {label}
+    </label>
+
   );
 }
-
-Toggle.propTypes = {
-  name: PropTypes.string,
-};
