@@ -9,17 +9,19 @@
 }
 
 .expandable__expanded-content {
+  margin-top: 20px;
   max-height: 20rem;
+  padding: 20px;
   overflow: auto;
   display: flex;
   width: 0;
   min-width: 100%;
-  transition: height 0.25s ease-in-out;
+  transform: scaleY(1);
+  transition: scaleY 0.25s ease-in-out;
 }
 
 .expandable__expanded-content--collapsed {
-  height: 0;
-  display: none;
+  transform: scaleY(0);
 }
 
 .expandable__icon {

@@ -1,3 +1,9 @@
+.project-card {
+  border: 1px solid whitesmoke;
+  padding: 10px;
+  border-radius: 25px;
+}
+
 .project-card > *:not(:last-child) {
   padding: 1rem 0;
 }

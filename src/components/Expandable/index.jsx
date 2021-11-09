@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react';
 import PropsType from 'prop-types';
+import { Button } from '../Button';
 import './index.css';
 
 export function Expandable({
@@ -10,36 +12,27 @@ export function Expandable({
 }) {
   const [isCollapsed, setIsCollapsed] = useState(isInitiallyCollapsed);
 
-  const handleCollapse = () => setIsCollapsed(!isCollapsed);
+  const handleCollapse = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
   return (
     <>
-      <label htmlFor="expandable__input" className="expandable__label">
-        <input
-          id="expandable__input"
-          className="hidden-accessibly"
-          type="checkbox"
-          onClick={handleCollapse}
-        />
-        <div
-          className={
-            isCollapsed
-              ? 'expandable__icon'
-              : 'expandable__icon expandable__icon--rotated'
-          }
-        >
-          👇
-        </div>
-        {isCollapsed ? altForExpandButton : altForCollapseButton}
-      </label>
-      <div
-        className={
-          isCollapsed
-            ? 'expandable__expanded-content expandable__expanded-content--collapsed'
-            : 'expandable__expanded-content'
-        }
+      <Button
+        type="button"
+        id="expandable__input"
+        onClick={handleCollapse}
       >
-        {children}
-      </div>
+        👇
+        {' '}
+        {isCollapsed ? altForExpandButton : altForCollapseButton}
+      </Button>
+
+      {isCollapsed ? null : (
+        <div className="expandable__expanded-content">
+          {children}
+        </div>
+      )}
     </>
   );
 }

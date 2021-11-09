@@ -7,10 +7,6 @@ import { EpamProjects } from '../../Experience/EpamProjects';
 import { Heading } from '../Heading';
 import {
   lineateWebSiteLink,
-  githubLink,
-  twitterLInk,
-  instagramLink,
-  telegramLink,
 } from '../../utils/constants';
 
 import './index.css';
@@ -50,10 +46,10 @@ export function Activities() {
         <EpamProjects />
       </ActivitySection>
 
-      <ActivitySection
+      {/* <ActivitySection
         link={githubLink}
         linkText="Github"
-        shortDescription=" Yet there is no projects I've created but code examples might be found
+        shortDescription="Yet there is no projects I've created but code examples might be found
         here"
       />
       <ActivitySection
@@ -70,7 +66,7 @@ export function Activities() {
         link={telegramLink}
         linkText="Telegram"
         shortDescription="Here you can contact me quickly and easily"
-      />
+      /> */}
     </>
   );
 }

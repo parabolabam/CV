@@ -9,11 +9,12 @@ export default function Layout({ children }) {
   return (
     <>
       <GithubRibbon />
+      <Header />
+
       <div className="layout">
-        <Header />
         {children}
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }

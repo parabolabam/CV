@@ -5,7 +5,8 @@
   ],
   "rules": {
     "import/prefer-default-export": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/prop-types": "off"
   },
   "parser": "@babel/eslint-parser",
   "parserOptions": {
