@@ -1,6 +1,12 @@
 .greeting {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: 15px;
+}
+
+.greeting__avatar {
+  display: grid;
   place-items: center;
 }
 

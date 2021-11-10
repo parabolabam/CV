@@ -3,7 +3,7 @@
 }
 .activity__short-description {
   /* since there is no reset css yet */
-  margin: 1rem 0 0;
+  margin: 1rem 0 25px;
 }
 .activity__link-text {
   font-size: var(--font-size-huge);

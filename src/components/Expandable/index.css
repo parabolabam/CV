@@ -18,7 +18,13 @@
   min-width: 100%;
   transform: scaleY(1);
   transition: scaleY 0.25s ease-in-out;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--background-secondary);
 }
+
+.expandable__expanded-content--grid {}
+.expandable__expanded-content--feed {}
 
 .expandable__expanded-content--collapsed {
   transform: scaleY(0);

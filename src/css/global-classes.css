@@ -1,3 +1,8 @@
+
+* {
+  box-sizing: border-box;
+}
+
 .hidden-accessibly {
   clip: rect(0 0 0 0);
   clip-path: inset(100%);

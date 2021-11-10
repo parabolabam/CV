@@ -11,7 +11,6 @@ export function Expandable({
   children = null,
 }) {
   const [isCollapsed, setIsCollapsed] = useState(isInitiallyCollapsed);
-
   const handleCollapse = () => {
     setIsCollapsed(!isCollapsed);
   };

@@ -3,7 +3,7 @@ import { useMediaPredicate } from 'react-media-hook';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Toggle } from '../Toggle';
 import Loader from '../Loader';
-import { getItem } from '../../common-services/local-storge-api';
+import { getItem, setItem } from '../../common-services/local-storge-api';
 
 import './index.css';
 /**
@@ -16,46 +16,36 @@ const LightTheme = React.lazy(() => import("./LightTheme")); // eslint-disable-l
 const ThemeSelector = ({ children }) => {
   // eslint-disable-next-line no-undef
   const body = document.querySelector('body');
-
-  const lightColorScheme = useMediaPredicate('(prefers-color-scheme: light)');
-  const darkColorScheme = useMediaPredicate('(prefers-color-scheme: dark)');
+  const prefersDarkColorScheme = useMediaPredicate('(prefers-color-scheme: dark)');
   const [{ isDarkMode }, setIsDarkMode] = useState({ isDarkMode: getItem('isDarkMode') });
   const onToggleChange = ({ target: { checked } }) => {
-    setIsDarkMode({ isDarkMode: !checked });
+    setIsDarkMode({ isDarkMode: checked });
+    setItem('isDarkMode', checked);
   };
-  useEffect(() => {
-    body.classList.remove('dark-theme', 'light-theme');
-
-    if (lightColorScheme) {
-      body.classList.add('light-theme');
-    } else if (darkColorScheme) {
-      body.classList.add('dark-theme');
-    }
-  });
 
   useEffect(() => {
-    // eslint-disable-next-line no-undef
-    if (isDarkMode === undefined || isDarkMode === null) {
-      return;
-    }
     body.classList.remove('dark-theme', 'light-theme');
-    body.classList.add(isDarkMode ? 'dark-theme' : 'light-theme');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isDarkMode]);
+    const isDarkPresent = isDarkMode !== null;
+
+    if (isDarkPresent) {
+      body.classList.add(isDarkMode ? 'dark-theme' : 'light-theme');
+    } else {
+      body.classList.add(prefersDarkColorScheme ? 'dark-theme' : 'light-theme');
+      onToggleChange({ target: { checked: prefersDarkColorScheme } });
+    }
+  }, [body.classList, isDarkMode, prefersDarkColorScheme]);
 
   return (
     <>
       <div className="theme-provider__theme-switch">
-        <FontAwesomeIcon className="theme-provider__theme-icon" icon={['far', 'moon']} />
-        <Toggle checked={!isDarkMode} onChange={onToggleChange} />
         <FontAwesomeIcon className="theme-provider__theme-icon" icon={['far', 'sun']} />
+        <Toggle checked={!!isDarkMode} onChange={onToggleChange} />
+        <FontAwesomeIcon className="theme-provider__theme-icon" icon={['far', 'moon']} />
       </div>
       {/* Conditionally render theme, based on the current client context */}
       <React.Suspense fallback={<Loader />}>
-        {isDarkMode === true && <DarkTheme />}
-        {isDarkMode === false && <LightTheme />}
-        {darkColorScheme && <DarkTheme />}
-        {lightColorScheme && <LightTheme />}
+        <DarkTheme />
+        <LightTheme />
       </React.Suspense>
 
       {children}
