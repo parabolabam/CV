@@ -14,3 +14,20 @@
   padding: 10px;
   gap: 10px;
 }
+
+@media screen and (max-width: 1024px) {
+  .theme-provider__theme-switch {
+    transform: rotate(90deg) translateX(35px) translateY(25px);
+  }
+
+  .theme-provider__theme-icon {
+    transform: rotate(-90deg);
+  }
+}
+
+@media screen and (max-width: 512px) {
+    .theme-provider__theme-switch, .theme-provider__theme-icon {
+      position: relative;
+      transform: none;
+    }
+  }

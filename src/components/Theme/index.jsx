@@ -46,9 +46,9 @@ const ThemeSelector = ({ children }) => {
   return (
     <>
       <div className="theme-provider__theme-switch">
-        <FontAwesomeIcon icon={['far', 'sun']} />
+        <FontAwesomeIcon className="theme-provider__theme-icon" icon={['far', 'moon']} />
         <Toggle checked={!isDarkMode} onChange={onToggleChange} />
-        <FontAwesomeIcon icon={['far', 'moon']} />
+        <FontAwesomeIcon className="theme-provider__theme-icon" icon={['far', 'sun']} />
       </div>
       {/* Conditionally render theme, based on the current client context */}
       <React.Suspense fallback={<Loader />}>
