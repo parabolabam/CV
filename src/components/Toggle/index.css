@@ -6,7 +6,6 @@
   flex-wrap: wrap;
   align-items: center;
   position: relative;
-  margin-bottom: 1em;
   cursor: pointer;
   gap: 1ch;
 }
@@ -35,7 +34,7 @@ button.Toggle {
   box-sizing: content-box;
   width: calc(var(--diameter) * 2 + var(--offset) * 2);
   height: calc(var(--diameter) + var(--offset) * 2);
-  border: 0.1em solid rgb(0 0 0 / 0.2);
+  border: 0.1em solid var(--border-color);
   position: relative;
   border-radius: 100vw;
   transition: 250ms;
@@ -50,7 +49,7 @@ button.Toggle {
   box-sizing: border-box;
   width: var(--diameter);
   height: var(--diameter);
-  border: 0.1em solid rgb(0 0 0 / 0.2);
+  border: 0.1em solid var(--border-color);
   border-radius: 50%;
   background-color: white;
   transform: translate(0, -50%);

@@ -1,8 +1,16 @@
-.dark-theme {
+:root {
   /* colors */
   --background-primary: #384457;
   --text-primary: #ffffff;
 
   --color-focus-primary: #5bb2fa;
   --border-color: whitesmoke;
+}
+
+.theme-provider__theme-switch {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  padding: 10px;
+  gap: 10px;
 }
