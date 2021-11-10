@@ -1,6 +1,6 @@
 .button {
   background: transparent;
-  border: 1px solid whitesmoke;
+  border: 1px solid var(--border-color);
   color: inherit;
   border-radius: 5px;
   padding: 10px;

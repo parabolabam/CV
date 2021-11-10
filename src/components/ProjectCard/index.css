@@ -1,5 +1,5 @@
 .project-card {
-  border: 1px solid whitesmoke;
+  border: 1px solid var(--border-color);
   padding: 10px;
   border-radius: 25px;
 }
