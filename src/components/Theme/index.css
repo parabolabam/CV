@@ -26,8 +26,9 @@
 }
 
 @media screen and (max-width: 512px) {
-    .theme-provider__theme-switch, .theme-provider__theme-icon {
-      position: relative;
-      transform: none;
-    }
+  .theme-provider__theme-switch,
+  .theme-provider__theme-icon {
+    position: relative;
+    transform: none;
   }
+}
