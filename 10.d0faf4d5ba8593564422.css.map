@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///src/components/Theme/colors-dark.css"],"names":[],"mappings":"AAAA,MAEE,4BAA6B,CAC7B,mBAAuB,CAEvB,6BACF,C","file":"10.d0faf4d5ba8593564422.css","sourcesContent":[":root {\n  /* colors */\n  --background-primary: #384457;\n  --text-primary: #ffffff;\n\n  --color-focus-primary: #5bb2fa;\n}\n"],"sourceRoot":""}
