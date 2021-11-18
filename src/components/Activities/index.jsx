@@ -17,7 +17,7 @@ function ActivitySection({
   return (
     <section className="activity">
       <Heading level={2}>
-        <Link href={link}>
+        <Link href={link} showIcon>
           <span className="activity__link-text">{linkText}</span>
         </Link>
       </Heading>

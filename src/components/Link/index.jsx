@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
 import './index.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-export function Link({ children = null, href = '#', targetBlank = true }) {
+export function Link({
+  children = null, href = '#', targetBlank = true, showIcon = false,
+}) {
   return (
     <>
       <a
@@ -12,6 +15,9 @@ export function Link({ children = null, href = '#', targetBlank = true }) {
         rel="noopener noreferrer"
       >
         {children}
+        <span className="link__icon">
+          {showIcon && <FontAwesomeIcon icon={['fa', 'external-link-alt']} size="xs" />}
+        </span>
       </a>
     </>
   );
@@ -20,6 +26,7 @@ export function Link({ children = null, href = '#', targetBlank = true }) {
 Link.propTypes = {
   href: PropTypes.string,
   targetBlank: PropTypes.bool,
+  showIcon: PropTypes.bool,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
