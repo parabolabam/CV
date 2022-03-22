@@ -5,14 +5,15 @@ import { LineateProjects } from '../../Experience/LineateProjects';
 import { EpamProjects } from '../../Experience/EpamProjects';
 
 import { Heading } from '../Heading';
-import {
-  lineateWebSiteLink,
-} from '../../utils/constants';
+import { lineateWebSiteLink } from '../../utils/constants';
 
 import './index.css';
 
 function ActivitySection({
-  link, linkText, shortDescription, children = null,
+  link,
+  linkText,
+  shortDescription,
+  children = null,
 }) {
   return (
     <section className="activity">
@@ -41,7 +42,7 @@ export function Activities() {
       <ActivitySection
         link={lineateWebSiteLink}
         linkText="Epam Team Member"
-        shortDescription="Occupied software engineer position"
+        shortDescription="Occupied senior software engineer position"
       >
         <EpamProjects />
       </ActivitySection>

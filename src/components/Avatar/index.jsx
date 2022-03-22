@@ -19,15 +19,19 @@ export function Avatar() {
 
       <div className="avatar__social-media">
         <Link href={instagramLink}>
-          <FontAwesomeIcon size="2x" icon={['fab', 'instagram']} />
+          <span className="link__content">Instagram</span>
         </Link>
 
         <Link href={twitterLInk}>
-          <FontAwesomeIcon size="2x" icon={['fab', 'twitter']} />
+          <span className="link__content">
+            <FontAwesomeIcon size="2x" icon={['fab', 'twitter']} />
+          </span>
         </Link>
 
         <Link href={githubLink}>
-          <FontAwesomeIcon size="2x" icon={['fab', 'github']} />
+          <span className="link__content">
+            <FontAwesomeIcon size="2x" icon={['fab', 'github']} />
+          </span>
         </Link>
       </div>
     </>

@@ -4,7 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 export function Link({
-  children = null, href = '#', targetBlank = true, showIcon = false,
+  children = null,
+  href = '#',
+  targetBlank = true,
+  showIcon = false,
 }) {
   return (
     <>
@@ -15,8 +18,10 @@ export function Link({
         rel="noopener noreferrer"
       >
         {children}
-        <span className="link__icon">
-          {showIcon && <FontAwesomeIcon icon={['fa', 'external-link-alt']} size="xs" />}
+        <span className={showIcon ? 'link__icon' : ''}>
+          {showIcon && (
+            <FontAwesomeIcon icon={['fa', 'external-link-alt']} size="xs" />
+          )}
         </span>
       </a>
     </>
