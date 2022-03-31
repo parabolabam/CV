@@ -25,5 +25,5 @@ jobs:
         run: sudo apt-get install rsync
       
       - name: rsync deployments
-        run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.FOLDER_OF_APP }}
+        run: sudo rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.FOLDER_OF_APP }}
 
