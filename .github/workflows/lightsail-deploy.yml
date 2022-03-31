@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: install rsync
-        run: apt-get install rsync
+        run: sudo apt-get install rsync
       
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.2
