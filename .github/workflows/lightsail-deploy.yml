@@ -21,3 +21,4 @@ jobs:
           SOURCE: "dist/"
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USER }}
+          TARGET: ${{ secrets.FOLDER_OF_APP }}
