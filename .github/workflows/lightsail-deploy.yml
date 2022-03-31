@@ -13,7 +13,7 @@ jobs:
       - name: Create known hosts
         run: |
           mkdir ~/.ssh
-          mkdir ~/.ssh/known_hosts
+          touch ~/.ssh/known_hosts
           
         
       - name: Adding Known Hosts
