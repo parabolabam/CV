@@ -25,11 +25,5 @@ jobs:
         run: sudo apt-get install rsync
       
       - name: rsync deployments
-        uses: burnett01/rsync-deployments@5.2
-        with:
-          switches: -avzr --delete
-          path: dist/
-          remote_path: ${{ secrets.FOLDER_OF_APP }}
-          remote_host: ${{ secrets.SSH_HOST }}
-          remote_user: admin
-          remote_key: ${{ secrets.ACTION_LIGHTSAIL_SECRET }}
+        run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.FOLDER_OF_APP }}
+
