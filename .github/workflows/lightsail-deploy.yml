@@ -12,13 +12,19 @@ jobs:
     steps:
       - name: install rsync
         run: sudo apt-get install rsync
+        
+      - name: build
+        run: |
+          npm ci
+          npm run build
+          ls -la
 
       - name: build & ssh-deploy
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ACTION_LIGHTSAIL_SECRET }}
           ARGS: "-rltgoDzvO"
-          SOURCE: "/"
+          SOURCE: "dist"
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USER }}
           TARGET: ${{ secrets.FOLDER_OF_APP }}
