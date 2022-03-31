@@ -10,25 +10,14 @@ jobs:
   create_ssh_key:
     runs-on: ubuntu-latest
     steps:
-      - name: Create known hosts
-        run: |
-          mkdir ~/.ssh
-          touch ~/.ssh/known_hosts
-          echo $(ssh-keyscan -H 18.192.242.18) >> ~/.ssh/known_hosts
-
-      - name: Adding Known Hosts
-        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with: 
-          key: ${{ secrets.ACTION_LIGHTSAIL_SECRET }}
-          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
-     
-        
       - name: install rsync
         run: sudo apt-get install rsync
-      
-      - name: rsync deployments
-        run: sudo rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.FOLDER_OF_APP }}
 
+      - name: build & ssh-deploy
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.ACTION_LIGHTSAIL_SECRET }}
+          ARGS: "-rltgoDzvO"
+          SOURCE: "dist/"
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
