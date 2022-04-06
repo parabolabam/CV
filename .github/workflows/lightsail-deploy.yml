@@ -32,3 +32,13 @@ jobs:
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USER }}
           TARGET: ${{ secrets.FOLDER_OF_APP }}
+          
+      - name: sync NGINX config
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.ACTION_LIGHTSAIL_SECRET }}
+          ARGS: "-rltgoDzvO --delete"
+          SOURCE: "nginx.conf"
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          TARGET: ${{ secrets.FOLDER_OF_APP }}
