@@ -58,5 +58,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.ACTION_LIGHTSAIL_SECRET }}
           script: |
-            sudo nginx -t -c
+            sudo nginx -t -c ~/CV/nginx.conf
             echo 'Hello world of Lightsail'
