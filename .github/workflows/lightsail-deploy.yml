@@ -1,13 +1,11 @@
-name: CD To Lightsail
+name: Continious Deployment To Lightsail Server in Harmfurt
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
 
 jobs:
-  create_ssh_key:
+  copy_content_to_server:
     runs-on: ubuntu-latest
     steps:
       - name: install rsync
@@ -32,8 +30,11 @@ jobs:
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USER }}
           TARGET: ${{ secrets.FOLDER_OF_APP }}
-          
-      - name: sync NGINX config
+
+  sync-nginx-config:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build & ssh-deploy
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ACTION_LIGHTSAIL_SECRET }}
@@ -42,3 +43,11 @@ jobs:
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USER }}
           TARGET: ${{ secrets.FOLDER_OF_APP }}
+  
+  launch-nginx-static-serving:
+    runs-on: ubuntu-latest
+    steps:
+      - name: start nginx
+        run: |
+          echo 'Work with nginx'
+      
