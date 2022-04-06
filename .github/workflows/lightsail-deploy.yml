@@ -50,7 +50,13 @@ jobs:
   launch-nginx-static-serving:
     runs-on: ubuntu-latest
     steps:
-      - name: start nginx
-        run: |
-          echo 'Work with nginx'
-      
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.ACTION_LIGHTSAIL_SECRET }}
+          script: | 
+            nginx -t -c
+            echo 'Hello world of Lightsail'
