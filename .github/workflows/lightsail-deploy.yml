@@ -57,6 +57,6 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.ACTION_LIGHTSAIL_SECRET }}
-          script: | 
-            nginx -t -c
+          script: |
+            sudo nginx -t -c
             echo 'Hello world of Lightsail'
