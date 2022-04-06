@@ -34,6 +34,9 @@ jobs:
   sync-nginx-config:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
       - name: build & ssh-deploy
         uses: easingthemes/ssh-deploy@main
         env:
