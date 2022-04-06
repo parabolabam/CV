@@ -5,7 +5,7 @@ import { LineateProjects } from '../../Experience/LineateProjects';
 import { EpamProjects } from '../../Experience/EpamProjects';
 
 import { Heading } from '../Heading';
-import { lineateWebSiteLink } from '../../utils/constants';
+import { lineateWebSiteLink, epamWebSiteLink } from '../../utils/constants';
 
 import './index.css';
 
@@ -40,7 +40,7 @@ export function Activities() {
       </ActivitySection>
 
       <ActivitySection
-        link={lineateWebSiteLink}
+        link={epamWebSiteLink}
         linkText="Epam Team Member"
         shortDescription="Occupied senior software engineer position"
       >
