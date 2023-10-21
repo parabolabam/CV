@@ -2,7 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Image } from '../Image';
 import { Link } from '../Link';
-import { githubLink, instagramLink, twitterLInk } from '../../utils/constants';
+import {
+  githubLink, instagramLink, twitterLInk, mastodonLink,
+} from '../../utils/constants';
 import './index.css';
 
 export function Avatar() {
@@ -31,6 +33,12 @@ export function Avatar() {
         <Link href={githubLink}>
           <span className="link__content">
             <FontAwesomeIcon size="2x" icon={['fab', 'github']} />
+          </span>
+        </Link>
+
+        <Link href={mastodonLink}>
+          <span className="link__content">
+            <FontAwesomeIcon size="2x" icon={['fab', 'mastodon']} />
           </span>
         </Link>
       </div>

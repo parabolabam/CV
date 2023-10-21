@@ -6,4 +6,5 @@ export const githubLink = 'https://github.com/parabolabam';
 export const twitterLInk = 'https://twitter.com/parabolabam';
 export const instagramLink = 'https://www.instagram.com/parabola_bam/';
 export const telegramLink = 'https://t.me/VladislawSorokin';
+export const mastodonLink = 'https://mastodon.social/@parabolabam';
 export const workplace = 'Lineate';
