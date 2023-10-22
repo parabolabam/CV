@@ -35,7 +35,7 @@ export function Avatar() {
           </span>
         </Link>
 
-        <Link href={mastodonLink}>
+        <Link href={mastodonLink} additionalRel='me'>
           <span className="link__content">
             <FontAwesomeIcon size="2x" icon={['fab', 'mastodon']} />
           </span>

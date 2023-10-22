@@ -7,14 +7,17 @@ export function Link({
   href = '#',
   targetBlank = true,
   showIcon = false,
+  additionalRel = ''
 }) {
+  const relOfLinks = ['noopener', 'noreferrer', additionalRel].join(' ');
+
   return (
     <>
       <a
         className="link"
         href={href}
         target={targetBlank ? '_blank' : '_self'}
-        rel="noopener noreferrer"
+        rel={relOfLinks}
       >
         {children}
         <span className={showIcon ? 'link__icon' : ''}>
