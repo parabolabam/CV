@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, lazy } from 'react';
 import { useMediaPredicate } from 'react-media-hook';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Loader from '../Loader';
@@ -9,9 +9,9 @@ import './index.css';
  * The theme components only imports it's theme CSS-file. These components are lazy
  * loaded, to enable "code splitting" (in order to avoid the themes being bundled together)
  */
-const DarkTheme = React.lazy(() => import('./DarkTheme'));
-const LightTheme = React.lazy(() => import("./LightTheme")); // eslint-disable-line
-const Toggle = React.lazy(() => import('../Toggle'));
+const DarkTheme = lazy(() => import('./DarkTheme'));
+const LightTheme = lazy(() => import("./LightTheme")); // eslint-disable-line
+const Toggle = lazy(() => import('../Toggle'));
 
 const ThemeSelector = ({ children }) => {
   // eslint-disable-next-line no-undef

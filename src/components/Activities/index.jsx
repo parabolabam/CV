@@ -1,7 +1,7 @@
 import React, {Suspense, lazy} from 'react';
 import PropTypes from 'prop-types';
 import { Link } from '../Link';
-import { Loading }from '../Loader';
+import Loading from '../Loader';
 import { lineateWebSiteLink, epamWebSiteLink, githubLink, twitterLInk, telegramLink  } from '../../utils/constants';
 
 import './index.css';

@@ -1,6 +1,12 @@
-module.exports = {
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import eslint from 'vite-plugin-eslint';
+
+
+export default {
     plugins: [
-        require('autoprefixer'),
-        ...(process.env.NODE_ENV === 'production' ? [require('cssnano')] : []),
+        eslint(),
+        autoprefixer(),
+        ...(process.env.NODE_ENV === 'production' ? [cssnano] : []),
     ],
 };
