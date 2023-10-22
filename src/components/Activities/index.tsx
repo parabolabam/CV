@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types';
 import { Link } from '../Link';
 import Loading from '../Loader';
-import { lineateWebSiteLink, epamWebSiteLink, githubLink, twitterLInk, telegramLink  } from '../../utils/constants';
-
+import { lineateWebSiteLink, epamWebSiteLink } from '../../utils/constants';
+import { Suspense, lazy } from 'react';
 import './index.css';
 
 const Heading = lazy(() => import('../Heading'));
@@ -38,7 +37,7 @@ export default function Activities() {
       >
         <Lineate />
       </ActivitySection>
-
+      
       <ActivitySection
         link={epamWebSiteLink}
         linkText="Epam Team Member"
@@ -46,17 +45,7 @@ export default function Activities() {
       >
         <Epam />
       </ActivitySection>
-
-        </>
-  );
+    </Suspense>
+  )
 }
 
-ActivitySection.propTypes = {
-  link: PropTypes.string.isRequired,
-  linkText: PropTypes.string.isRequired,
-  shortDescription: PropTypes.string.isRequired,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
-};
