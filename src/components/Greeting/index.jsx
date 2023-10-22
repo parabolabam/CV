@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar } from '../Avatar';
 import './index.css';
 
-export function Greeting() {
+export default function Greeting() {
   return (
     <>
       <div className="greeting">

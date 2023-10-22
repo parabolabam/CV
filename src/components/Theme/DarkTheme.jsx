@@ -4,4 +4,8 @@ import React from 'react';
 //    to enable code - splitting for this CSS.
 import './colors-dark.css';
 
-export default () => <></>;
+// eslint-disable-next-line func-names
+export default function () {
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  return <></>;
+}

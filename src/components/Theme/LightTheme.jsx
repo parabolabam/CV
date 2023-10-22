@@ -4,4 +4,5 @@ import React from 'react';
 //    to enable code - splitting for this CSS.
 import './colors-light.css';
 
+// eslint-disable-next-line react/function-component-definition, react/jsx-no-useless-fragment
 export default () => <></>;

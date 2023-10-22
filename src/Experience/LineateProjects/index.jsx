@@ -3,6 +3,6 @@ import React from 'react';
 import Projects from '../Projects';
 import { projects } from './lineateProjects';
 
-export function LineateProjects() {
+export default function LineateProjects() {
   return <Projects projects={projects} />;
 }

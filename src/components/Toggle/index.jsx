@@ -1,9 +1,8 @@
 import React from 'react';
 import './index.css';
 
-export function Toggle({ label, onChange, checked }) {
+export default function Toggle({ label, onChange, checked }) {
   const change = (event) => {
-    console.log('way');
     onChange(event);
   };
   return (

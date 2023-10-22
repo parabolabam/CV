@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-export function Heading({ level, children }) {
+export default function Heading({ level, children }) {
   switch (level) {
     case 1:
       return <h1>{children}</h1>;

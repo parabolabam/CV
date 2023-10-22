@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {Suspense, lazy} from 'react';
 import PropTypes from 'prop-types';
 import { Link } from '../Link';
-import { LineateProjects } from '../../Experience/LineateProjects';
-import { EpamProjects } from '../../Experience/EpamProjects';
-
-import { Heading } from '../Heading';
-import { lineateWebSiteLink, epamWebSiteLink } from '../../utils/constants';
+import { Loading }from '../Loader';
+import { lineateWebSiteLink, epamWebSiteLink, githubLink, twitterLInk, telegramLink  } from '../../utils/constants';
 
 import './index.css';
+
+const Heading = lazy(() => import('../Heading'));
+const Epam = lazy(() => import('../../Experience/EpamProjects'));
+const Lineate = lazy(() => import('../../Experience/LineateProjects'))
 
 function ActivitySection({
   link,
@@ -28,15 +29,15 @@ function ActivitySection({
   );
 }
 
-export function Activities() {
+export default function Activities() {
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <ActivitySection
         link={lineateWebSiteLink}
         linkText="Lineate Team Member"
         shortDescription="Occupied software engineer position"
       >
-        <LineateProjects />
+        <Lineate />
       </ActivitySection>
 
       <ActivitySection
@@ -44,10 +45,10 @@ export function Activities() {
         linkText="Epam Team Member"
         shortDescription="Occupied senior software engineer position"
       >
-        <EpamProjects />
+        <Epam />
       </ActivitySection>
 
-      {/* <ActivitySection
+       <ActivitySection
         link={githubLink}
         linkText="Github"
         shortDescription="Yet there is no projects I've created but code examples might be found
@@ -59,16 +60,11 @@ export function Activities() {
         shortDescription="Share my thoughts and experience mostly here"
       />
       <ActivitySection
-        link={instagramLink}
-        linkText="Instagram"
-        shortDescription="Simple life of open person"
-      />
-      <ActivitySection
         link={telegramLink}
         linkText="Telegram"
         shortDescription="Here you can contact me quickly and easily"
-      /> */}
-    </>
+      /> 
+    </Suspense>
   );
 }
 

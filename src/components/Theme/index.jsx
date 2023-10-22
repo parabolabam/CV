@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useMediaPredicate } from 'react-media-hook';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Toggle } from '../Toggle';
 import Loader from '../Loader';
 import { getItem, setItem } from '../../common-services/local-storge-api';
 
@@ -12,6 +11,7 @@ import './index.css';
  */
 const DarkTheme = React.lazy(() => import('./DarkTheme'));
 const LightTheme = React.lazy(() => import("./LightTheme")); // eslint-disable-line
+const Toggle = React.lazy(() => import('../Toggle'));
 
 const ThemeSelector = ({ children }) => {
   // eslint-disable-next-line no-undef

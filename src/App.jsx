@@ -1,17 +1,23 @@
-import React from 'react';
-import { Greeting } from './components/Greeting';
-import { Activities } from './components/Activities';
-import ThemeProvider from './components/Theme';
+import React, { lazy, Suspense } from 'react';
 import Layout from './Layout/BaseLayout';
+import Loading from './components/Loader';
 import './css/app.css';
 
-const App = () => (
-  <ThemeProvider>
-    <Layout>
-      <Greeting />
-      <Activities />
-    </Layout>
-  </ThemeProvider>
-);
+const ThemeProvider = lazy(() => import('./components/Theme'));
+const Activities = lazy(() => import('./components/Activities'));
+const Greeting  = lazy(() => import('./components/Greeting'));
+
+function App() {
+  return (
+    <Suspense fallback={<Loading />}> 
+      <ThemeProvider>
+        <Layout>
+          <Greeting />
+          <Activities />
+        </Layout>
+      </ThemeProvider>
+    </Suspense>
+  );
+}
 
 export default App;

@@ -3,6 +3,6 @@ import React from 'react';
 import Projects from '../Projects';
 import { projects } from './epamProjects';
 
-export function EpamProjects() {
+export default function EpamProjects() {
   return <Projects projects={projects} />;
 }
