@@ -3,7 +3,7 @@ import cssnano from 'cssnano';
 import eslint from 'vite-plugin-eslint';
 import react from '@vitejs/plugin-react';
 
-export default {
+module.exports = {
     plugins: [
         react(),
         eslint(),
