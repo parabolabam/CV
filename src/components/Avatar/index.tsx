@@ -20,7 +20,7 @@ export function Avatar() {
 
       <div className="avatar__social-media">
         <Link href={instagramLink}>
-          <span className="link__content">Instagram</span>
+           <FontAwesomeIcon size="2x" icon={['fab', 'instagram']} />
         </Link>
 
         <Link href={twitterLInk}>
