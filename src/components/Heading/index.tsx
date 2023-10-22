@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+
 
 export default function Heading({ level, children }) {
   switch (level) {

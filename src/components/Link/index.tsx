@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
 
 export function Link({
   children = null,
@@ -20,7 +19,7 @@ export function Link({
         {children}
         <span className={showIcon ? 'link__icon' : ''}>
           {showIcon && (
-            <FontAwesomeIcon icon={['fa', 'external-link-alt']} size="xs" />
+            <FontAwesomeIcon icon={['fas', 'external-link-alt']} size="xs" />
           )}
         </span>
       </a>

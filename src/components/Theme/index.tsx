@@ -39,7 +39,7 @@ const ThemeSelector = ({ children }) => {
     <>
       <div className="theme-provider__theme-switch">
         <FontAwesomeIcon className="theme-provider__theme-icon" icon={['far', 'sun']} />
-        <Toggle checked={!!isDarkMode} onChange={onToggleChange} />
+        <Toggle checked={!!isDarkMode} onChange={onToggleChange} label='' />
         <FontAwesomeIcon className="theme-provider__theme-icon" icon={['far', 'moon']} />
       </div>
       {/* Conditionally render theme, based on the current client context */}

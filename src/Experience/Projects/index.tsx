@@ -1,4 +1,3 @@
-import React from 'react';
 
 import { ProjectCard } from '../../components/ProjectCard';
 import { Expandable } from '../../components/Expandable';
@@ -7,7 +6,6 @@ import './index.css';
 
 export default function Projects({ projects }) {
   return (
-    <React.StrictMode>
       <Expandable
         altForExpandButton="More about projects"
         altForCollapseButton="Collapse"
@@ -26,6 +24,5 @@ export default function Projects({ projects }) {
           ))}
         </div>
       </Expandable>
-    </React.StrictMode>
   );
 }

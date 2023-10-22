@@ -1,4 +1,7 @@
-import React, { lazy, Suspense } from 'react';
+
+import { Greeting } from './components/Greeting';
+import { Activities } from './components/Activities';
+import ThemeProvider from './components/Theme';
 import Layout from './Layout/BaseLayout';
 import Loading from './components/Loader';
 import './css/app.css';

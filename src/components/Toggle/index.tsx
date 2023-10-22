@@ -1,4 +1,3 @@
-import React from 'react';
 import './index.css';
 
 export default function Toggle({ label, onChange, checked }) {

@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropsType from 'prop-types';
 import { Button } from '../Button';
 import './index.css';
@@ -18,8 +17,6 @@ export function Expandable({
   return (
     <>
       <Button
-        type="button"
-        id="expandable__input"
         onClick={handleCollapse}
       >
         👇
