@@ -1,0 +1,1 @@
+.avatar{border-radius:50%;overflow:hidden}.avatar__social-media{display:flex;justify-content:center;gap:20px;margin-top:16px}.link__content{display:flex;place-items:center;height:100%}.greeting{display:grid;grid-template-columns:1fr;place-items:center;gap:15px}.greeting__avatar{display:grid;place-items:center}.greeting__avatar>img{border-radius:50%;overflow:hidden}
