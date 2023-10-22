@@ -1,0 +1,1 @@
+import{j as e}from"./index-c0c25b16.js";function a({label:s,onChange:o,checked:t}){const g=l=>{o(l)};return e.jsxs("label",{className:"Toggle",htmlFor:"toggle",children:[e.jsx("input",{checked:t,onChange:g,type:"checkbox",name:"toggle",id:"toggle",className:"Toggle__input"}),e.jsx("span",{className:"Toggle__display",hidden:!0}),s]})}export{a as default};
